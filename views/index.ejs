@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC03dlNqvWX4Ybpg3GjXDC6kwOxKSa9bQ&libraries=places"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            google.maps.event.addDomListener(window, 'load', initialize);
+        });
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+        function initialize() {
+            var input = document.getElementById('city');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+        }
+    </script>
     <meta charset="utf-8">
     <title>A Simple Weather App</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -10,7 +25,7 @@
     <div class="container">
       <fieldset>
         <form action="/" method="post">
-          <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
+          <input name="city" id="city" type="text" class="ghost-input" placeholder="Enter a City" required>
           <input type="submit" class="ghost-button" value="Get Weather">
         </form>
         <% if(weather !== null){ %>
