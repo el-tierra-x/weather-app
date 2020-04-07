@@ -23,3 +23,15 @@ npm install
 
 # Other dependency
 The app uses two API's openweather and google places. Create both the API keys from https://openweathermap.org/api and  https://console.cloud.google.com and replace them in server.js and index.ejs respectively!
+
+# Running the project
+Run the project using 
+```
+node server.js
+```
+Go to 
+```
+localhost:8000
+```
+to view the app
+
